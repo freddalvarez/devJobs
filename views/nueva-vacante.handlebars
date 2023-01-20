@@ -1,0 +1,49 @@
+<main class="contenedor">
+    <form action="/vacantes/nueva" method="POST" class="default-form">
+        <h3>Informacion General</h3>
+        <div class="campo">
+            <label for="titulo">Titulo</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Titulo de la vacante" >
+            </div>
+        <div class="campo">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa" >
+        </div>
+        <div class="campo">
+            <label for="ubicacion">Ubicacion</label>
+            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ciudad y pais" >
+        </div>
+        <div class="campo">
+            <label for="salario">Salario (USD)</label>
+            <input type="number" id="salario" name="salario" placeholder="Salario en dolares" >
+        </div>
+        <div class="campo">
+            <label for="contrato">Contrato</label>
+            <select name="contrato">
+                <option value="" disabled selected>-- Seleccione --</option>
+                <option value="Full time">Full Time</option>
+                <option value="Part time">Part Time</option>
+                <option value="Freelance">Freelance</option>
+                <option value="Internship">Internship</option>
+                <option value="Temporary">Temporary</option>
+            </select>
+        </div>
+        <h3>Descripcion de la vacante</h3>
+        <div class="campo descripcion">
+            <label for="descripcion">Descripcion</label>
+            <input type="hidden" id="descripcion" name="descripcion" >
+            <trix-editor input="descripcion"></trix-editor>
+        </div>
+        <h3>Conocimientos</h3>
+        <ul class="lista-conocimientos">
+            {{#seleccionarSkills a}}
+                
+            {{/seleccionarSkills}}
+        </ul>
+        <div class="campo centrar-horizontal">
+            <input type="hidden" name="skills" id="skills" value="">
+            <input type="submit" value="Publicar vacante" class="btn btn-azul">
+        </div>
+
+    </form>
+</main>
